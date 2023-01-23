@@ -27,7 +27,8 @@ void BlinkLED1(void const *argument)
 int main(int argc, char **argv)
 {
   /* TODO: generic board setup */
-  NULL;
+  NULL;  /* TODO: clock config */
+  NULL;  /* TODO: GPIO config */
 
   /* TODO: set up GPIO for LEDs */
   pvtLED1Setup();
