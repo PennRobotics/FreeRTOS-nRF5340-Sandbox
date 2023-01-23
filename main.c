@@ -1,9 +1,27 @@
 #include "FreeRTOS.h"
 
+#define  TOGGLE(r)  (r)  /* TODO: create pin toggle macro */
+#define  PIN_LED1  (0x01)  /* TODO: figure this out */
+#define  PIN_LED2  (0x02)  /* TODO: figure this out */
+#define  PIN_LED3  (0x04)  /* TODO: figure this out */
+#define  PIN_LED4  (0x08)  /* TODO: figure this out */
+
 void pvtLED1Setup();  /* 4 ms period */
 void pvtLED2Setup();  /* 100 ms period */
 void pvtLED3Setup();  /* 250 ms period */
 void pvtLED4Setup();  /* 512 ms period */
+
+
+void BlinkLED1(void const *argument)
+{
+  for(;;)
+  {
+    TOGGLE(PIN_LED1);
+  }
+}
+
+
+/* TODO: BlinkLED#(...) for #=2,3,4 */
 
 
 int main(int argc, char **argv)
