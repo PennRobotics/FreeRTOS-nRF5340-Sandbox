@@ -30,7 +30,7 @@ int main(int argc, char **argv)
   NULL;
 
   /* TODO: delete task for LED1 after 2 seconds */
-  status = osThreadTerminate(thr1);  /* TODO: this should happen once after a two second timer, what works best? */
+  status = osThreadTerminate(Task1Handle);  /* TODO: this should happen once after a two second timer, what works best? */
 
   /* TODO: proper endless loop */
   NULL;
