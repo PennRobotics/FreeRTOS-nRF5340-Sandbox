@@ -41,6 +41,8 @@ int main(int argc, char **argv)
   /* TODO: create tasks for 4 LEDs */
   osThreadDef(Task1, BlinkLED1, osPriorityNormal, 0/*TODO*/, 100/*TODO*/);
   osThreadId Task1Handle = osThreadCreate(osThread(Task1), tcarg/*TODO*/);
+  if (Task1Handle == NULL)  { HardFault_Handler(); }
+
   osThreadId Task2Handle = osThreadCreate(thr2_def/*TODO*/, tcarg/*TODO*/);
   osThreadId Task3Handle = osThreadCreate(thr3_def/*TODO*/, tcarg/*TODO*/);
   osThreadId Task4Handle = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
