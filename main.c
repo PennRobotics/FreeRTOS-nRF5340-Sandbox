@@ -17,6 +17,7 @@ void BlinkLED1(void const *argument)
   for(;;)
   {
     TOGGLE(PIN_LED1);
+    osDelay(4);  /* TODO: correct? */
   }
 }
 
@@ -49,7 +50,9 @@ int main(int argc, char **argv)
   osThreadId Task4Handle = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
 
   /* TODO: start scheduler */
-  timerLED1, osTimerPeriodic, ...
+  osTimerDef(timerLED1, timerLED1Callback);
+  timerLED1Handle = osTimerCreate(osTimer(timerLED1), osTimerPeriodic, NULL);
+  /*TODO:maybe move to task*/osTimerStart(timerLED1Handle, 1/*TODO*/);
   timerLED2, ...
   NULL;
 
