@@ -21,7 +21,11 @@ int main(int argc, char **argv)
   NULL;
 
   /* TODO: create tasks for 4 LEDs */
-  NULL;
+  osThreadId thr1, thr2, thr3, thr4;
+  thr1 = osThreadCreate(thr1_def/*TODO*/, tcarg/*TODO*/);
+  thr2 = osThreadCreate(thr2_def/*TODO*/, tcarg/*TODO*/);
+  thr3 = osThreadCreate(thr3_def/*TODO*/, tcarg/*TODO*/);
+  thr4 = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
 
   /* TODO: start scheduler */
   NULL;
