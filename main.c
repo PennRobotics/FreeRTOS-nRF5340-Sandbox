@@ -38,25 +38,28 @@ int main(int argc, char **argv)
   pvtLED4Setup();
 
   /* TODO: required FreeRTOS setup */
-  NULL;
+  vTaskStartScheduler();  /* TODO */
 
   /* TODO: create tasks for 4 LEDs */
-  osThreadDef(Task1, BlinkLED1, osPriorityNormal, 0/*TODO*/, 100/*TODO*/);
-  osThreadId Task1Handle = osThreadCreate(osThread(Task1), tcarg/*TODO*/);
-  if (Task1Handle == NULL)  { HardFault_Handler(); }
-
-  osThreadId Task2Handle = osThreadCreate(thr2_def/*TODO*/, tcarg/*TODO*/);
-  osThreadId Task3Handle = osThreadCreate(thr3_def/*TODO*/, tcarg/*TODO*/);
-  osThreadId Task4Handle = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
+  xTaskCreate(...);  /* TODO */
+  /// osThreadDef(Task1, BlinkLED1, osPriorityNormal, 0/*TODO*/, 100/*TODO*/);
+  /// osThreadId Task1Handle = osThreadCreate(osThread(Task1), tcarg/*TODO*/);
+  /// if (Task1Handle == NULL)  { HardFault_Handler(); }
+  /// 
+  /// osThreadId Task2Handle = osThreadCreate(thr2_def/*TODO*/, tcarg/*TODO*/);
+  /// osThreadId Task3Handle = osThreadCreate(thr3_def/*TODO*/, tcarg/*TODO*/);
+  /// osThreadId Task4Handle = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
 
   /* TODO: start scheduler */
-  osTimerDef(timerLED1, timerLED1Callback);
-  timerLED1Handle = osTimerCreate(osTimer(timerLED1), osTimerPeriodic, NULL);
-  /*TODO:maybe move to task*/osTimerStart(timerLED1Handle, 1/*TODO*/);
-  timerLED2, ...
+  xTimerCreate(...);  /* TODO */
+  /// osTimerDef(timerLED1, timerLED1Callback);
+  /// timerLED1Handle = osTimerCreate(osTimer(timerLED1), osTimerPeriodic, NULL);
+  /// /*TODO:maybe move to task*/osTimerStart(timerLED1Handle, 1/*TODO*/);
+  /// timerLED2, ...
   NULL;
 
   /* TODO: delete task for LED1 after 2 seconds */
+  /* TODO: use FreeRTOS API rather than CMSIS_RTOS */
   status = osThreadTerminate(Task1Handle);  /* TODO: this should happen once after a two second timer, what works best? */
 
   /* TODO: proper endless loop */
