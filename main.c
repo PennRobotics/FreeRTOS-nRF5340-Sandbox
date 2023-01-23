@@ -49,6 +49,8 @@ int main(int argc, char **argv)
   osThreadId Task4Handle = osThreadCreate(thr4_def/*TODO*/, tcarg/*TODO*/);
 
   /* TODO: start scheduler */
+  timerLED1, osTimerPeriodic, ...
+  timerLED2, ...
   NULL;
 
   /* TODO: delete task for LED1 after 2 seconds */
