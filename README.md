@@ -1,6 +1,7 @@
 ### FreeRTOS-nRF5340-Sandbox
-
 Repository for trying out FreeRTOS
+
+https://gitlab.com/PennRobotics/FreeRTOS-nRF5340-Sandbox
 
 
 # TODO-urgent: Change target from nRF5340
